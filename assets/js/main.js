@@ -107,6 +107,7 @@
 			// Vars.
 				var $form = document.querySelectorAll('#signup-form')[0],
 					$submit = document.querySelectorAll('#signup-form input[type="submit"]')[0],
+					password = document.getElementById('email'),
 					$message;
 
 			// Bail if addEventListener isn't supported.
@@ -159,9 +160,12 @@
 								$submit.disabled = false;
 
 							// Show message.
-								$message._show('success', 'Thank you!');
-								//$message._show('failure', 'Something went wrong. Please try again.');
-
+								if (password.value == '123') {
+									//$message._show('success', 'Thank you!');
+									location.href='https://tarolancy.github.io';
+								}else {
+									$message._show('failure', 'Password was wrong. Please try again or contact me.');
+								}
 						}, 750);
 
 				});
